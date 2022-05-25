@@ -3,14 +3,14 @@ import React from 'react';
 const Blog = () => {
     return (
         <div className=' container mx-auto '>
-            <div className="card lg:card-side bg-base-100 shadow-xl m-5 ">
+            <div className="card lg:card-side bg-base-100 shadow-xl m-5  ">
                 <figure className='max-w-xs'><img src="https://i.ibb.co/ZcwhVd1/react.jpg" alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">How will you improve the performance of a React Application?</h2>
                     <p>Click the button to listen on Spotiwhy app.</p>
                 </div>
             </div>
-            <div className="card lg:card-side bg-base-100 shadow-xl m-5 ">
+            <div className="card lg:card-side bg-base-100 shadow-xl m-5">
                 <figure className='max-w-xs'><img src="https://i.ibb.co/ZcwhVd1/react.jpg" alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">What are the different ways to manage a state in a React application?</h2>
