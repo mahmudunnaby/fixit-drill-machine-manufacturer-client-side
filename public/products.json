@@ -1,0 +1,112 @@
+[
+    {
+        "_id": 0,
+        "price": "$100",
+        "quentity": "200",
+        "picture": "https://i.ibb.co/MfLhWpW/drill1.jpg",
+        "supplier": "FIX IT",
+        "name": "Perfect Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "World's toughest drill meshine here!\r\n"
+    },
+    {
+        "_id": 1,
+        "price": "$150",
+        "quentity": "100",
+        "picture": "https://i.ibb.co/mqLYP0Y/drill10.jpg",
+        "supplier": "FIX IT",
+        "name": "Smart Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Number one ranked drill mechine \r\n"
+    },
+    {
+        "_id": 2,
+        "price": "$160",
+        "quentity": "100",
+        "picture": "https://i.ibb.co/ssZQXZN/drill3.jpg",
+        "supplier": "FIX IT",
+        "name": "Modern Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "This is one of the best selling drillers last year. It has an unique look. \r\n"
+    },
+    {
+        "_id": 3,
+        "price": "$250",
+        "quentity": "300",
+        "picture": "https://i.ibb.co/HH28Qvy/drill4.jpg",
+        "supplier": "FIX IT",
+        "name": "Supper Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Extraordinary Performance for life time \r\n"
+    },
+    {
+        "_id": 4,
+        "price": "$160",
+        "quentity": "400",
+        "picture": "https://i.ibb.co/pJJKVk1/drill5.jpg",
+        "supplier": "FIX IT",
+        "name": "Stunning Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Low Cost Budget Friendly Drill Machine \r\n"
+    },
+    {
+        "_id": 5,
+        "price": "$600",
+        "quentity": "900",
+        "picture": "https://i.ibb.co/KD2Ydqv/drill6.jpg",
+        "supplier": "FIX IT",
+        "name": "Glamour Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "It's completely waterprof and dustprof drilling device \r\n"
+    },
+    {
+        "_id": 6,
+        "price": "$550",
+        "quentity": "450",
+        "picture": "https://i.ibb.co/gS3Zw8f/drill7.jpg",
+        "supplier": "FIX IT",
+        "name": "Hard Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Extraordinary Performance for life time\r\n"
+    },
+    {
+        "_id": 7,
+        "price": "$100",
+        "quentity": "300",
+        "picture": "https://i.ibb.co/7GWTvzS/drill8.jpg",
+        "supplier": "FIX IT",
+        "name": "Drill Times",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "The Device has a glamorous look and gives extremely good performance\r\n"
+    },
+    {
+        "_id": 8,
+        "price": "$200",
+        "quentity": "900",
+        "picture": "https://i.ibb.co/QmXZprc/drill9.jpg",
+        "supplier": "FIX IT",
+        "name": "Easy Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Low Cost Budget Friendly Drill Machine.Extraordinary Performance for life time \r\n"
+    },
+    {
+        "_id": 9,
+        "price": "$700",
+        "quentity": "600",
+        "picture": "https://i.ibb.co/gS3Zw8f/drill7.jpg",
+        "supplier": "FIX IT",
+        "name": "Lovely Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Extraordinary Performance for life time.The Device has a glamorous look &  ensures Extraordinary Performance for life time\r\n"
+    },
+    {
+        "_id": 10,
+        "price": "$750",
+        "quentity": "300",
+        "picture": "https://i.ibb.co/MfLhWpW/drill1.jpg",
+        "supplier": "FIX IT",
+        "name": "Power Drill",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "discription": "Number one ranked drill mechine.Extraordinary Performance for life time \r\n"
+    }
+]
