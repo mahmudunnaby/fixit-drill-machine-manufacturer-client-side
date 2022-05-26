@@ -3,7 +3,7 @@ import { BeakerIcon, MailIcon, TrendingUpIcon, TruckIcon, UserGroupIcon } from '
 
 const BusinessSummery = () => {
     return (
-        <div className="stats stats-vertical lg:stats-horizontal shadow bg-warning my-5">
+        <div className="stats stats-vertical lg:stats-horizontal shadow bg-warning mt-10 mb-5">
 
             <div className="stat">
                 <UserGroupIcon className="h-8 w-8 ml-8 text-white"></UserGroupIcon>

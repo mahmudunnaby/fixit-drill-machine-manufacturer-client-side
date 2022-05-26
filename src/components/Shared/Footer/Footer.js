@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-accent text-primary-content ">
+        <footer className="footer footer-center p-10 bg-accent text-primary-content drop-shadow-lg mt-5">
             <div>
                 <img className=' w-16' src="https://i.ibb.co/L5bVTCy/Green-Geometric-Industrial-Logo-1-removebg-preview-1.png" alt="" />
                 <p className="font-bold text-white">
