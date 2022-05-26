@@ -8,6 +8,8 @@ import Products from './components/Products/Products';
 import BusinessSummery from './components/BusinessSummery/BusinessSummery';
 import Footer from './components/Shared/Footer/Footer';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
+import Login from './components/Login/Login/Login';
+import Register from './components/Login/Register/Register';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/products' element={<Products></Products>}></Route>
         <Route path='/businesssummery' element={<BusinessSummery></BusinessSummery>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
