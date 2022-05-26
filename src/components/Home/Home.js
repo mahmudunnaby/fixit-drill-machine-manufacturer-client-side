@@ -1,5 +1,6 @@
 import React from 'react';
 import AddProduct from '../AddProduct/AddProduct';
+import AddReview from '../AddReview/AddReview';
 import Banner from '../Banner/Banner';
 import BusinessSummery from '../BusinessSummery/BusinessSummery';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
@@ -16,6 +17,7 @@ const Home = () => {
             <AddProduct></AddProduct>
             <MyOrders></MyOrders>
             <ManageAllOrders></ManageAllOrders>
+            <AddReview></AddReview>
         </div>
     );
 };
