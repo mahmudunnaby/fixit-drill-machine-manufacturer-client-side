@@ -10,6 +10,7 @@ import Footer from './components/Shared/Footer/Footer';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 import Login from './components/Login/Login/Login';
 import Register from './components/Login/Register/Register';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/businesssummery' element={<BusinessSummery></BusinessSummery>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>

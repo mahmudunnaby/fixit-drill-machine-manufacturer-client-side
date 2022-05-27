@@ -16,7 +16,7 @@ const NewArived = () => {
     const newArivedFirst = data[data.length - 1]
     const newArivedSecond = data[data.length - 2]
 
-    const newProducts = data.slice([data.length - 3])
+    const newProducts = data.slice([data.length - 2])
     // console.log(data[11 - 1]);
     // console.log(data[data.length - 1]);
 

@@ -6,7 +6,7 @@ const Review = ({ review }) => {
 
     return (
         <div className="card w-96 glass items-center text-center">
-            <div className="card-body items-center text-center ">
+            <div className="card-body items-center text-center">
                 <h2 className="card-title">{email}</h2>
                 <p>{theReview}</p>
                 <div className='' >
