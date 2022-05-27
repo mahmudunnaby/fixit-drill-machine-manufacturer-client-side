@@ -29,7 +29,7 @@ const ManageAllOrders = () => {
 
                     {
                         orders.map(order => {
-                            return <tr>
+                            return <tr key={order._id}>
 
                                 <td className=' bg-warning'> <div className="mask mask-squircle w-12 h-12  ">
                                     <img src={order.picture} alt="Avatar Tailwind CSS Component" />

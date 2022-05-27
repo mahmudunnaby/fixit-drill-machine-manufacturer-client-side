@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Product = ({ product }) => {
-    const { name, price, quentity, picture, supplier, discription } = product
+    const { name, price, quentity, picture, supplier, discription, minOrder } = product
     return (
         <div>
 
@@ -17,6 +17,7 @@ const Product = ({ product }) => {
                         <div className="stat bg-accent">
                             <div className="stat-title">{quentity} nos</div>
                             <div className="stat-value">{price}</div>
+                            <div className="stat-title">Min.Order {minOrder}</div>
 
                         </div>
 

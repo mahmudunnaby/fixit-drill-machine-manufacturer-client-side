@@ -1,0 +1,38 @@
+[
+    {
+        "_id": 0,
+        "rating": "1",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "theReview": "The Best Product\r\n"
+    },
+    {
+        "_id": 1,
+        "rating": "4",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "theReview": "Exelent Quality \r\n"
+    },
+    {
+        "_id": 2,
+        "rating": "5",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "theReview": "Extraordinary Product \r\n"
+    },
+    {
+        "_id": 3,
+        "rating": "2",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "theReview": "Really Powerful \r\n"
+    },
+    {
+        "_id": 4,
+        "rating": "5",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "theReview": "WOW! Grate Product \r\n"
+    },
+    {
+        "_id": 5,
+        "rating": "3",
+        "email": "mahmudunnabyemon0@gmail.com",
+        "theReview": "Extraordinary, WOW! \r\n"
+    }
+]

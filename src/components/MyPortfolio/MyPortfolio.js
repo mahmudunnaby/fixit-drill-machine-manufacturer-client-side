@@ -1,7 +1,7 @@
 import { BookOpenIcon, LightningBoltIcon, MailIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { FaReact, FaCss3Alt } from 'react-icons/fa';
-import { DiJavascript1 } from "react-icons/di";
+import { DiJavascript1, DiNodejs } from "react-icons/di";
 import { SiReactrouter } from "react-icons/si";
 import { SiTailwindcss, SiFirebase, SiExpress, SiMongodb } from "react-icons/si";
 import { BsBootstrapFill } from "react-icons/bs";
@@ -52,6 +52,7 @@ const MyPortfolio = () => {
                                     <SiFirebase className='h-8 w-8  text-warning'></SiFirebase>
                                     <SiExpress className='h-8 w-8  text-warning'></SiExpress>
                                     <SiMongodb className='h-8 w-8  text-warning'></SiMongodb>
+                                    <DiNodejs className='h-8 w-8  text-warning'></DiNodejs>
                                 </div>
 
 

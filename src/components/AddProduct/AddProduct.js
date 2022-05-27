@@ -41,6 +41,10 @@ const AddProduct = () => {
                         </label>
                         <input type="number" placeholder="Quentity" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
+                            <span className="label-text">Minimum Order?</span>
+                        </label>
+                        <input type="number" placeholder="Min. Order" className="input input-bordered w-full max-w-xs" />
+                        <label className="label">
                             <span className="label-text">Product Discription?</span>
                         </label>
                         <input type="Text" placeholder="Discription" className="input input-bordered w-full max-w-xs" />
