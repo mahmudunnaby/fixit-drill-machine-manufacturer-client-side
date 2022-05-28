@@ -8,7 +8,7 @@ const Products = () => {
 
 
     const { isLoading, error, data } = useQuery('products', () =>
-        fetch('products.json').then(res =>
+        fetch('http://localhost:5000/products').then(res =>
             res.json()
         )
     )
