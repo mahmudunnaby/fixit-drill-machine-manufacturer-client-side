@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -25,8 +25,8 @@ const Register = () => {
     const [updateProfile, updating, error] = useUpdateProfile(auth);
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-
-
+    const [nameUser, userLoading] = useAuthState(auth);
+    console.log(nameUser, "nameUser");
 
     let signInError
     if (emailPassError || error || googleError) {
@@ -47,7 +47,8 @@ const Register = () => {
 
 
         await updateProfile({ displayName: data?.displayName })
-        alert('Updated profile')
+        console.log({ displayName: data?.displayName });
+        toast('Updated profile')
 
 
 

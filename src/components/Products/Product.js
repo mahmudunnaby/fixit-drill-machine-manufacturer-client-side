@@ -28,9 +28,9 @@ const Product = ({ product }) => {
                         </div>
 
                     </div>
-                    {/* <div className="card-actions">
+                    <div className="card-actions">
                         <button onClick={() => navigateToPurchase(_id)} className="btn btn-active">Buy Now</button>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
