@@ -54,8 +54,6 @@ const Register = () => {
 
     }
 
-
-
     if (user || googleUser) {
         navigate(from, { replace: true });
 

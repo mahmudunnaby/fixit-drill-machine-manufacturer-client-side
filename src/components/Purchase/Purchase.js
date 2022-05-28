@@ -26,7 +26,6 @@ const Purchase = () => {
         )
     )
 
-
     if (isLoading || loading) {
         return <Loading></Loading>
     }
@@ -50,18 +49,28 @@ const Purchase = () => {
 
         if (orderquentity > minOrder && orderquentity <= maxOrder) {
 
-            const OrderData = { user, email, address, Phone, orderquentity, productID, productName }
-
-
-            console.log(OrderData);
+            const orderData = { user, email, address, Phone, orderquentity, productID, productName }
 
             toast.success('Order Placed')
+
+            fetch('http://localhost:5000/purchase', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(orderData)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data, 'data posted');
+                })
+
+
+
+
+
         }
-        else { return toast.error(`Bust be more than ${minOrder} and  less than ${maxOrder}`) }
-
-
-
-
+        else { return toast.error(`Must be more than ${minOrder} and  less than ${maxOrder}`) }
 
 
 
@@ -86,7 +95,7 @@ const Purchase = () => {
                                 </label>
                                 <input
                                     ref={refUser}
-                                    disabled name='user' value={user.displayName} type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
+                                    disabled name='user' value={user?.displayName} type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
                             </div>
 
                             <div className="form-control w-full max-w-xs">
