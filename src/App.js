@@ -11,6 +11,9 @@ import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 import Login from './components/Login/Login/Login';
 import Register from './components/Login/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
+import ResetPassword from './components/Login/ResetPassword/ResetPassword';
+import Purchase from './components/Purchase/Purchase';
+import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -28,6 +31,8 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/resetpassword' element={<ResetPassword></ResetPassword>}></Route>
+        <Route path='/products/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

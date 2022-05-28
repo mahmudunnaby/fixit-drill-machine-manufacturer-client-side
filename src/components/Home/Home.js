@@ -8,7 +8,6 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import MyOrders from '../MyOrders/MyOrders';
 import NewArived from '../NewArived/NewArived';
 import Products from '../Products/Products';
-import Purchase from '../Purchase/Purchase';
 import Reviews from '../Review/Reviews';
 
 
@@ -26,7 +25,7 @@ const Home = () => {
             <AddReview></AddReview>
             <Reviews></Reviews>
             <Faq></Faq>
-            <Purchase></Purchase>
+
 
         </div>
     );

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Register = () => {
 
@@ -19,10 +23,10 @@ const Register = () => {
         emailPassError,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, error] = useUpdateProfile(auth);
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
-    if (user || googleUser) {
-        console.log(user || googleUser);
-    }
+
 
     let signInError
     if (emailPassError || error || googleError) {
@@ -36,14 +40,23 @@ const Register = () => {
     }
     const onSubmit = async data => {
 
+
         // console.log(data)
 
         await createUserWithEmailAndPassword(data?.email, data?.password)
 
-        await updateProfile(data?.name)
 
-        // console.log(data?.name);
-        navigate('/home')
+        await updateProfile({ displayName: data?.displayName })
+        alert('Updated profile')
+
+
+
+    }
+
+
+
+    if (user || googleUser) {
+        navigate(from, { replace: true });
 
     }
 
@@ -64,7 +77,8 @@ const Register = () => {
 
                             </label>
                             <input
-                                {...register("name", {
+
+                                {...register("displayName", {
                                     required: {
                                         value: true,
                                         message: 'Name is required'
@@ -74,7 +88,7 @@ const Register = () => {
                                         message: 'Please provide a valid name'
                                     }
                                 })}
-                                type="name" placeholder="Name" className="input input-bordered w-full max-w-xs" />
+                                type="displayName" placeholder="Name" className="input input-bordered w-full max-w-xs" />
                             <label className="label">
                                 {errors.text?.type === 'required' && <span className="label-text-alt text-red-600">{errors.text.message}</span>}
                                 {errors.text?.type === 'minLength' && <span className="label-text-alt text-red-600">{errors.text.message}</span>}
@@ -140,7 +154,7 @@ const Register = () => {
                         Google Login
                         <FcGoogle></FcGoogle>
                     </button>
-
+                    <ToastContainer />
                 </div>
             </div>
 

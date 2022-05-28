@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading/Loading';
 import Product from './Product';
 
 
 const Products = () => {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
 
+    // const {  data,error, isFetched,isLoading } = useQuery('products', () =>
+    //     fetch('http://localhost:5000/products').then(res =>
+    //         res.json()
+    //     )
+    // )
 
-    const { isLoading, error, data } = useQuery('products', () =>
-        fetch('http://localhost:5000/products').then(res =>
-            res.json()
-        )
-    )
+    // if (isLoading || isFetched) {
+    //     return <Loading></Loading>
+    // }
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    // let errormessagefeatch
+    // if (error) {
+    //     errormessagefeatch = <p>{error.message}</p>
+    // }
 
-    const products = data.slice(0, 6)
-
+    // const product = data.slice(0, 6)
+    // const productsHome = products.slice(0, 6)
+    // console.log(products);
     return (
         <div className='bg-accent py-24 rounded-t-2xl mt-5'>
 
@@ -31,7 +42,7 @@ const Products = () => {
                     ></Product>)
                 }
             </div>
-
+            {/* {errormessagefeatch} */}
 
         </div>
     );

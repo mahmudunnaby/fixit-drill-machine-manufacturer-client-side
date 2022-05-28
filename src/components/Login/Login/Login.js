@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading'
 
+
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate()
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
 
     if (user || googleUser) {
-        console.log(user || googleUser);
+        navigate(from, { replace: true })
     }
 
     let signInError
@@ -36,7 +41,13 @@ const Login = () => {
 
         signInWithEmailAndPassword(data?.email, data?.password)
 
+
     }
+    const resetPassword = () => {
+        navigate('/resetpassword')
+    }
+
+
 
     return (
         <div>
@@ -101,11 +112,13 @@ const Login = () => {
                         </div>
                         <input className='btn' type="submit" value='SIGN IN' />
                         {signInError}
+
                     </form>
                     <label className="label grid grid-rows-2 ">
-                        <span className="label-text-alt"><Link className='text-white' to='/register'>Forgot Password?</Link > </span>
+                        <span onClick={resetPassword} className="label-text-alt text-white cursor-pointer">Forgot Password?</span>
                         <span className="label-text-alt">New at FIXIT? <Link className='text-white' to='/register'>Please Register.</Link > </span>
                     </label>
+
                 </div>
 
 
