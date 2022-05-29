@@ -13,7 +13,7 @@ const Dashboard = () => {
             <div className="drawer drawer-mobile ">
                 <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                    <h1 className=' text-2xl font-bold text-black'>DASHBOARD</h1>
+
                     <Outlet></Outlet>
                     {/* <!-- Page content here --> */}
 

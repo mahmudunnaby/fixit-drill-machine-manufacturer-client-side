@@ -22,7 +22,7 @@ const Product = ({ product }) => {
 
                         <div className="stat bg-accent">
                             <div className="stat-title">{quentity} nos</div>
-                            <div className="stat-value">{price}</div>
+                            <div className="stat-value"> {price}</div>
                             <div className="stat-title">Min.Order {minOrder}</div>
 
                         </div>
