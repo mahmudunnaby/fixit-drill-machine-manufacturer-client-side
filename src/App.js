@@ -21,6 +21,7 @@ import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
 import AddProduct from './components/AddProduct/AddProduct';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import ManageProduct from './components/ManageProduct/ManageProduct';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -49,7 +50,9 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/resetpassword' element={<ResetPassword></ResetPassword>}></Route>
         <Route path='/myorders/:id' element={<MyOrders></MyOrders>}></Route>
+
         <Route path='/products/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+        <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

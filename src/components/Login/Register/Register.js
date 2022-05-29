@@ -62,7 +62,7 @@ const Register = () => {
     }
 
     if (token) {
-        navigate(from, { replace: true });
+        navigate('/home');
 
     }
 
