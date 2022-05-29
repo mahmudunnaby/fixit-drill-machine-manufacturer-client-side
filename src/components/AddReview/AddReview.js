@@ -43,7 +43,7 @@ const AddReview = () => {
             })
 
 
-
+        toast.success('Thanks for the Review')
 
     }
 

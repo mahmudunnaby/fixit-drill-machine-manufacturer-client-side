@@ -53,21 +53,19 @@ const MyProfile = () => {
 
                 <form className='bg-accent p-16 drop-shadow-2xl rounded-lg' onSubmit={handleMyProfile}>
 
-
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">Admin User</span>
+                            <span className="label-text">User Name</span>
+                        </label>
+                        <input ref={refName} disabled value={user.displayName} type="text" placeholder="name" className="input input-bordered w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
                         </label>
                         <input disabled value={user.email} type="text" placeholder="Email" className="input input-bordered w-full max-w-xs" />
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Name</span>
-
-                        </label>
-                        <input ref={refName} type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
-                    </div>
 
 
                     <div className="form-control w-full max-w-xs">
