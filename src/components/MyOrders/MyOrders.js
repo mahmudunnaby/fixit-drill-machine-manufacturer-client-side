@@ -1,17 +1,28 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
 const MyOrders = () => {
+    const [user, loading] = useAuthState(auth);
+    const query = user.email
+    console.log(query);
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch('products.json').then(res =>
+        fetch(`http://localhost:5000/purchase/${query}`).then(res =>
             res.json()
         )
     )
 
-    if (isLoading) {
+
+
+    if (isLoading || loading) {
         return <Loading></Loading>
     }
+
+
+    console.log(orders);
+
     return (
         <div className="overflow-x-auto m-10">
             <table className="table w-full">
@@ -19,10 +30,12 @@ const MyOrders = () => {
                 <thead className=''>
                     <tr>
 
-                        <th className=' bg-neutral text-white p-5'>Image</th>
+
                         <th className=' bg-neutral text-white p-5'>Name</th>
-                        <th className=' bg-neutral text-white p-5'>Job</th>
-                        <th className=' bg-neutral text-white p-5'>Favorite Color</th>
+                        <th className=' bg-neutral text-white p-5'>Order Quentity</th>
+                        <th className=' bg-neutral text-white p-5'>Order By</th>
+                        <th className=' bg-neutral text-white p-5'>Delivery</th>
+
                     </tr>
                 </thead>
                 <tbody >
@@ -31,12 +44,12 @@ const MyOrders = () => {
                         orders.map(order => {
                             return <tr key={order._id}>
 
-                                <td className=' bg-warning'> <div className="mask mask-squircle w-12 h-12  ">
-                                    <img src={order.picture} alt="Avatar Tailwind CSS Component" />
-                                </div> </td>
-                                <td className=' bg-warning'>{order.name}</td>
-                                <td className=' bg-warning'>Quality Control Specialist</td>
-                                <td className=' bg-warning'>Blue</td>
+
+                                <td className=' bg-warning'>{order.productName}</td>
+                                <td className=' bg-warning'>{order.orderquentity}</td>
+                                <td className=' bg-warning'>{order.user}</td>
+                                <td className=' bg-warning'>{order.address}</td>
+
                             </tr>
                         })
                     }

@@ -4,7 +4,7 @@ const AddProduct = () => {
     return (
         <div>
 
-            <div className="flex flex-col w-full bg-accent  pb-40">
+            <div className="flex flex-col w-full bg-accent  ">
                 <div className="grid h-auto card  mt-10 mx-5 p-6 rounded-box place-items-center">
 
 

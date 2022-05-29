@@ -8,6 +8,7 @@ import Loading from '../../Shared/Loading/Loading';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useToken from '../../../hooks/useToken';
 
 
 
@@ -22,10 +23,16 @@ const Register = () => {
         loading,
         emailPassError,
     ] = useCreateUserWithEmailAndPassword(auth);
+
     const [updateProfile, updating, error] = useUpdateProfile(auth);
+
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
     const [nameUser, userLoading] = useAuthState(auth);
+
+    const [token] = useToken(user || googleUser)
+
     console.log(nameUser, "nameUser");
 
     let signInError
@@ -54,7 +61,7 @@ const Register = () => {
 
     }
 
-    if (user || googleUser) {
+    if (token) {
         navigate(from, { replace: true });
 
     }

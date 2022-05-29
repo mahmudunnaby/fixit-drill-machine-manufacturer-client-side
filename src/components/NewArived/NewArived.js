@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 
 const NewArived = () => {
     const { isLoading, error, data } = useQuery('newproduct', () =>
-        fetch('products.json').then(res =>
+        fetch('http://localhost:5000/products').then(res =>
             res.json()
         )
     )

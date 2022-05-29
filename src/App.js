@@ -14,6 +14,13 @@ import Dashboard from './components/Dashboard/Dashboard';
 import ResetPassword from './components/Login/ResetPassword/ResetPassword';
 import Purchase from './components/Purchase/Purchase';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
+import MyOrders from './components/MyOrders/MyOrders';
+import AddReview from './components/AddReview/AddReview';
+import MyProfile from './components/MyProfile/MyProfile';
+import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
+import AddProduct from './components/AddProduct/AddProduct';
+import MakeAdmin from './components/MakeAdmin/MakeAdmin';
+import ManageProduct from './components/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -29,9 +36,19 @@ function App() {
         <Route path='/businesssummery' element={<BusinessSummery></BusinessSummery>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='manageproduct' element={<ManageProduct></ManageProduct>}></Route>
+        </Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/resetpassword' element={<ResetPassword></ResetPassword>}></Route>
+        <Route path='/myorders/:id' element={<MyOrders></MyOrders>}></Route>
         <Route path='/products/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
       </Routes>
       <Footer></Footer>

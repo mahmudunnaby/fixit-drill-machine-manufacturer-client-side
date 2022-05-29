@@ -3,8 +3,8 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading/Loading';
 
 const ManageAllOrders = () => {
-    const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch('products.json').then(res =>
+    const { isLoading, error, data: manageallorders } = useQuery('manageallorders', () =>
+        fetch('http://localhost:5000/purchase').then(res =>
             res.json()
         )
     )
@@ -19,24 +19,28 @@ const ManageAllOrders = () => {
                 <thead className=''>
                     <tr>
 
-                        <th className=' bg-neutral text-white p-5'>Image</th>
-                        <th className=' bg-neutral text-white p-5'>Name</th>
-                        <th className=' bg-neutral text-white p-5'>Job</th>
-                        <th className=' bg-neutral text-white p-5'>Favorite Color</th>
+
+                        <th className=' bg-neutral text-white p-5'>Product Name</th>
+                        <th className=' bg-neutral text-white p-5'>Order By</th>
+                        <th className=' bg-neutral text-white p-5'>Order Quentity</th>
+                        <th className=' bg-neutral text-white p-5'>Delivery</th>
+                        <th className=' bg-neutral text-white p-5'>Phone</th>
+                        <th className=' bg-neutral text-white p-5 '>Email</th>
                     </tr>
                 </thead>
                 <tbody >
 
                     {
-                        orders.map(order => {
+                        manageallorders.map(order => {
                             return <tr key={order._id}>
 
-                                <td className=' bg-warning'> <div className="mask mask-squircle w-12 h-12  ">
-                                    <img src={order.picture} alt="Avatar Tailwind CSS Component" />
-                                </div> </td>
-                                <td className=' bg-warning'>{order.name}</td>
-                                <td className=' bg-warning'>Quality Control Specialist</td>
-                                <td className=' bg-warning'>Blue</td>
+
+                                <td className=' bg-warning'>{order.productName}</td>
+                                <td className=' bg-warning'>{order.user}</td>
+                                <td className=' bg-warning'>{order.orderquentity}</td>
+                                <td className=' bg-warning'>{order.address}</td>
+                                <td className=' bg-warning'>{order.Phone}</td>
+                                <td className=' bg-warning'>{order.email}</td>
                             </tr>
                         })
                     }
