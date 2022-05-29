@@ -7,7 +7,7 @@ const Reviews = () => {
 
 
     const { isLoading, error, data } = useQuery('reviews', () =>
-        fetch('review.json').then(res =>
+        fetch('http://localhost:5000/review').then(res =>
             res.json()
         )
     )

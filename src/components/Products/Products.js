@@ -27,7 +27,7 @@ const Products = () => {
     //     errormessagefeatch = <p>{error.message}</p>
     // }
 
-    // const product = data.slice(0, 6)
+    const productHome = products.slice([products.length - 6])
     // const productsHome = products.slice(0, 6)
     // console.log(products);
     return (
@@ -36,7 +36,7 @@ const Products = () => {
             <div className='grid md:grid-cols-3 md:gap-4 grid-cols-1 gap-5  justify-items-center'>
                 {
 
-                    products?.map(product => <Product
+                    productHome?.map(product => <Product
                         key={product._id}
                         product={product}
                     ></Product>)
