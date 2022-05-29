@@ -48,10 +48,10 @@ const MyProfile = () => {
     }
 
     return (
-        <div className="flex flex-col w-full bg-accent  py-6 ">
-            <div className="grid h-auto card  mt-10 mx-5 p-6 rounded-box place-items-center">
+        <div className="flex flex-col w-full  ">
+            <div className="grid h-auto card    rounded-box place-items-center">
 
-                <form onSubmit={handleMyProfile}>
+                <form className='bg-accent p-16 drop-shadow-2xl rounded-lg' onSubmit={handleMyProfile}>
 
 
                     <div className="form-control w-full max-w-xs">
@@ -66,7 +66,7 @@ const MyProfile = () => {
                             <span className="label-text">Name</span>
 
                         </label>
-                        <input ref={refName} type="text" placeholder="Product Name" className="input input-bordered w-full max-w-xs" />
+                        <input ref={refName} type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
                     </div>
 
 
@@ -75,21 +75,21 @@ const MyProfile = () => {
                             <span className="label-text">Education</span>
 
                         </label>
-                        <input ref={refEducation} type="text" placeholder="Price" className="input input-bordered w-full max-w-xs" />
+                        <input ref={refEducation} type="text" placeholder="Education" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Location</span>
                         </label>
-                        <input ref={refLocation} type="text" placeholder="Image Link" className="input input-bordered w-full max-w-xs" />
+                        <input ref={refLocation} type="text" placeholder="Location" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Phone</span>
                         </label>
-                        <input ref={refPhone} type="number" placeholder="Quentity" className="input input-bordered w-full max-w-xs" />
+                        <input ref={refPhone} type="number" placeholder="Phone" className="input input-bordered w-full max-w-xs" />
 
                     </div>
 
@@ -97,7 +97,7 @@ const MyProfile = () => {
                         <label className="label">
                             <span className="label-text">Linkedin</span>
                         </label>
-                        <input ref={refSocial} type="text" placeholder="Min. Order" className="input input-bordered w-full max-w-xs" />
+                        <input ref={refSocial} type="text" placeholder="Linkedin link" className="input input-bordered w-full max-w-xs" />
 
                     </div>
 
