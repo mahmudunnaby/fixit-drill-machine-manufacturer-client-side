@@ -21,10 +21,15 @@ const Purchase = () => {
     const refQuentity = useRef('')
 
     const { isLoading, error, data } = useQuery('product', () =>
-        fetch(`http://localhost:5000/products/${id}`).then(res =>
+        fetch(`https://mysterious-citadel-05250.herokuapp.com/products/${id}`).then(res =>
             res.json()
         )
     )
+
+    if (isLoading || loading) {
+        return <Loading></Loading>
+    }
+
 
     if (isLoading || loading) {
         return <Loading></Loading>
@@ -44,16 +49,19 @@ const Purchase = () => {
         const maxOrder = parseInt(data.quentity)
         const productID = data._id
         const productName = data.name
+        const availableProduct = data.quentity
+        const price = data.price
+        const discription = data.discription
 
         // console.log(minOrder, typeof (data.minOrder));
 
         if (orderquentity > minOrder && orderquentity <= maxOrder) {
 
-            const orderData = { user, email, address, Phone, orderquentity, productID, productName }
+            const orderData = { user, email, address, Phone, orderquentity, productID, productName, availableProduct, price, discription }
 
             toast.success('Order Placed')
 
-            fetch('http://localhost:5000/purchase', {
+            fetch('https://mysterious-citadel-05250.herokuapp.com/purchase', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -80,9 +88,15 @@ const Purchase = () => {
     return (
         <div className="hero min-h-screen bg-neutral container mx-auto">
             <div className="hero-content flex-col lg:flex-row">
-                <img className="md:max-w-xl sm:max-w-xs rounded-lg shadow-2xl" src={data.picture} />
+                <div className='flex flex-col'>
+                    <img className="md:max-w-xl sm:max-w-xs rounded-lg shadow-2xl" src={data.picture} />
+                    <h1 className="text-2xl font-bold text-warning mt-4">Available: {data.quentity} nos</h1>
+                </div>
+
                 <div>
                     <h1 className="text-6xl font-bold text-warning">{data.name}</h1>
+                    <h1 className="text-2xl font-bold text-warning">{data.discription}</h1>
+
 
                     <div className="grid h-auto card  mt-10 ml-5 mx-5 px-20 rounded-box place-items-center">
 

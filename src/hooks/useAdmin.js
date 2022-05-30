@@ -9,7 +9,7 @@ const useAdmin = user => {
         const currentUser = { email: email }
 
         if (email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://mysterious-citadel-05250.herokuapp.com/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json'

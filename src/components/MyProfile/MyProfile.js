@@ -35,7 +35,7 @@ const MyProfile = () => {
             social
         }
 
-        fetch(`http://localhost:5000/user/${user.email}`, {
+        fetch(`https://mysterious-citadel-05250.herokuapp.com/user/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

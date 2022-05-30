@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 
 const ManageAllOrders = () => {
     const { isLoading, error, data: manageallorders } = useQuery('manageallorders', () =>
-        fetch('http://localhost:5000/purchase').then(res =>
+        fetch('https://mysterious-citadel-05250.herokuapp.com/purchase').then(res =>
             res.json()
         )
     )

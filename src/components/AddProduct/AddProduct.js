@@ -36,7 +36,7 @@ const AddProduct = () => {
 
         const newProduct = { email, productName, price, img, quentity, minOrder, discription }
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://mysterious-citadel-05250.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

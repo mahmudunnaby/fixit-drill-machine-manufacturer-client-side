@@ -22,6 +22,7 @@ import AddProduct from './components/AddProduct/AddProduct';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import ManageProduct from './components/ManageProduct/ManageProduct';
 import NotFound from './components/NotFound/NotFound';
+import Payment from './components/Payment/Payment';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path='/myorders/:id' element={<MyOrders></MyOrders>}></Route>
 
         <Route path='/products/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+        <Route path='/payment/:id' element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

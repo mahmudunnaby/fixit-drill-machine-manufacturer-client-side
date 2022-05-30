@@ -1,10 +1,17 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
 
 const NewArived = () => {
+
+    const navigate = useNavigate()
+    const navigateToPurchase = (id) => {
+        navigate(`/products/${id}`)
+    }
+
     const { isLoading, error, data } = useQuery('newproduct', () =>
-        fetch('http://localhost:5000/products').then(res =>
+        fetch('https://mysterious-citadel-05250.herokuapp.com/products').then(res =>
             res.json()
         )
     )
@@ -21,6 +28,10 @@ const NewArived = () => {
     // console.log(data[data.length - 1]);
 
     // console.log(newProducts);
+
+
+
+
 
     return (
 
@@ -47,7 +58,7 @@ const NewArived = () => {
                             <div className="stat-value text-secondary">{newProduct.price}</div>
                             <div className="stat-desc">{newProduct.quentity > 0 && <p>On Stock</p> || <p>Stock Out</p>} </div>
                             <div className="card-actions  justify-center  mt-5">
-                                <button className="btn  btn-warning">Buy Now</button>
+                                <button onClick={() => navigateToPurchase(newProduct._id)} className="btn  btn-warning">Buy Now</button>
                             </div>
                         </div>
                     })

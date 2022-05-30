@@ -7,7 +7,7 @@ const Reviews = () => {
 
 
     const { isLoading, error, data } = useQuery('reviews', () =>
-        fetch('http://localhost:5000/review').then(res =>
+        fetch('https://mysterious-citadel-05250.herokuapp.com/review').then(res =>
             res.json()
         )
     )

@@ -1,15 +1,20 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
+    const navigate = useNavigate()
+    const navigateToPayment = (id) => {
+        navigate(`/payment/${id}`)
+    }
     const query = user.email
     console.log(query);
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch(`http://localhost:5000/purchase/${query}`).then(res =>
+        fetch(`https://mysterious-citadel-05250.herokuapp.com/purchase/${query}`).then(res =>
             res.json()
         )
     )
@@ -35,6 +40,8 @@ const MyOrders = () => {
                         <th className=' bg-neutral text-white p-5'>Order Quentity</th>
                         <th className=' bg-neutral text-white p-5'>Order By</th>
                         <th className=' bg-neutral text-white p-5'>Delivery</th>
+                        <th className=' bg-neutral text-white p-5'>Payment</th>
+                        <th className=' bg-neutral text-white p-5'>Action</th>
 
                     </tr>
                 </thead>
@@ -49,6 +56,8 @@ const MyOrders = () => {
                                 <td className=' bg-warning'>{order.orderquentity}</td>
                                 <td className=' bg-warning'>{order.user}</td>
                                 <td className=' bg-warning'>{order.address}</td>
+                                <td className=' bg-warning'><button onClick={() => navigateToPayment(order._id)} className=' btn btn-xs btn-success'>Pay Now </button></td>
+                                <td><button className=' btn btn-xs'>Cancel Order</button></td>
 
                             </tr>
                         })

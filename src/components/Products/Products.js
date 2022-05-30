@@ -7,13 +7,13 @@ import Product from './Product';
 const Products = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://mysterious-citadel-05250.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
 
     // const {  data,error, isFetched,isLoading } = useQuery('products', () =>
-    //     fetch('http://localhost:5000/products').then(res =>
+    //     fetch('https://mysterious-citadel-05250.herokuapp.com/products').then(res =>
     //         res.json()
     //     )
     // )

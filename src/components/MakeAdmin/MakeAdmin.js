@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const MakeAdmin = () => {
     const { isLoading, error, refetch, data: appUser } = useQuery('appUser', () =>
-        fetch('http://localhost:5000/user').then(res =>
+        fetch('https://mysterious-citadel-05250.herokuapp.com/user').then(res =>
             res.json()
         )
     )
@@ -17,7 +17,7 @@ const MakeAdmin = () => {
     }
 
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://mysterious-citadel-05250.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
